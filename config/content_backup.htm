@@ -5,3 +5,33 @@
 <h1>Work</h1>
 <h2>w1</h2>
 <p>零件繪圖、建立網站</p>
+<script>
+function getDart(dirname){
+    source = "https://dartpad.github.io/embed-dart.html?gh_owner=40823245&gh_repo=cad2020&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+    document.getElementById("iframe").src = source ;
+}
+
+function getHtmlDart(dirname){
+    source = "https://dartpad.github.io/embed-html.html?gh_owner=40823245&gh_repo=cad2020&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+
+function getFlutter(dirname){
+    source = "https://dartpad.github.io/embed-flutter.html?gh_owner=40823245&gh_repo=cad2020&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+
+function largest(){
+document.getElementById("iframe").width = document.body.clientWidth ;
+document.getElementById("iframe").height = document.body.clientWidth*0.5 ;
+}
+
+function original(){
+document.getElementById("iframe").width = 800 ;
+document.getElementById("iframe").height = 600 ;
+}
+</script>
+<!-- 取 Dart 程式的按鈕 -->
+<p><button onclick="largest()">放大</button> <button onclick="original()">回復</button> <button onclick="getDart('excel')">excel</button> <!-- 內建放入的 Dart 原始碼 --></p>
+<p></p>
+<p><iframe height="600" id="iframe" src="https://dartpad.dartlang.org/embed-dart.html?gh_owner=40823245&amp;gh_repo=cad2020&amp;gh_path=downloads/dart_ex/Excel&amp;theme=dark" width="800"></iframe></p>
