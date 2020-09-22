@@ -148,7 +148,59 @@ img.add_border {
 <p>使用白窗開啟http-server.py</p>
 <p>點選Tools→go</p>
 <p><img alt="" height="445" src="./../images/8444-1.PNG" width="560"/></p>
-<h4>三、進行上傳</h4>
+<h4>三、製作金鑰</h4>
+<p>點選資料夾的Portablegit<span>→bin→sh.exe</span></p>
+<p><span><img alt="" height="510" src="./../images/ssh-11.PNG" width="976"/></span></p>
+<h6>輸入ssh-keygen -t rsa -b 4096 -C "40823245"</h6>
+<p><span style="color: #ff0000;">請自行改成自己的學號</span></p>
+<p>案enter<span>→輸入/y/tmp/id_rsa→案2次enter</span></p>
+<p><span><img alt="" height="401" src="./../images/ssh-12.PNG" width="630"/></span></p>
+<p>下載putty、putty_home、GitExtensions</p>
+<p>將start移到白窗  並新增 </p>
+<p>set GIT_HOME=%Disk%:\Portablegit\bin\<br/>set GIT_SSH=%Disk%:\putty\plink.exe</p>
+<p><img alt="" height="729" src="./../images/ssh-13.PNG" width="563"/></p>
+<p>打開.git資料夾，把config移到白窗</p>
+<p>如沒有.git資料夾 打開隱藏的項目</p>
+<p><img alt="" height="349" src="./../images/ssh-14.PNG" width="1191"/></p>
+<p>新增<span>[remote "origin"]裡的</span>url = git@github.com:40823245/cad2020.git</p>
+<p><img alt="" height="444" src="./../images/ssh.PNG" width="562"/></p>
+<p><span>file→save</span></p>
+<p><span>打開putty資料夾的puttygen.exe</span></p>
+<p><span>點load，找到id_rsa</span></p>
+<p><span><img alt="" height="523" src="./../images/ssh-15.PNG" width="789"/></span></p>
+<p><span>案是→Save private key→案是→輸入學號(存.ppk檔)</span></p>
+<p><span>打開putty.exe</span></p>
+<p><span><img alt="" height="441" src="./../images/ssh-16.PNG" width="454"/></span></p>
+<p><span></span>若沒有github.com，在Host Name和Save Sessions打<span>github.com案Save</span></p>
+<p>設定proxy(使用自家網路、手機網路請選None)</p>
+<p>看你的網路連到哪一台 就打一樣的proxy</p>
+<p>打開SSH裡面的Auth</p>
+<p>選擇你所生產的金鑰檔案(.ppk)</p>
+<p>回到session點選save再open</p>
+<p><img alt="" height="420" src="./../images/ssh-1.PNG" width="667"/></p>
+<p>在home新增.ssh資料夾</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">ProxyCommand y:/putty/plink.exe github.com %h %p
+ 
+Host github.com
+    User git
+    Port 22
+    Hostname github.com
+ 
+    TCPKeepAlive yes
+    IdentitiesOnly yes
+
+</pre>
+<p></p>
+<p>將上面的指令複製到白窗並另存config</p>
+<p>到倉儲網頁新增金鑰(右上Settings)</p>
+<p><img alt="" height="494" src="./../images/ssh-17.PNG" width="1011"/></p>
+<p>點New SSH key</p>
+<p>到tmp找到id_rsa.pub並用白窗開啟，複製內容到Key</p>
+<p>並確認學號</p>
+<p><img alt="" height="434" src="./../images/ssh-18.PNG" width="1040"/></p>
+<p></p>
+<p>案Add SSH key</p>
+<h4>四、進行上傳</h4>
 <h5>方法一</h5>
 <p>先進到scad2  → cd tmp/scad2</p>
 <p>git add .</p>
@@ -158,7 +210,7 @@ img.add_border {
 <p>輸入密碼</p>
 <h5>方法二(啟用ssh)</h5>
 <p>要先改.git裡面的config</p>
-<p>[remote "origin"]把之前的https加上#   打出第2行</p>
+<p>[remote "origin"]把之前的https加上#</p>
 <p><img alt="" height="444" src="./../images/ssh.PNG" width="562"/></p>
 <p>開啟putty(putty.exe)   將設定調好</p>
 <p>點github.com  案load</p>
@@ -197,7 +249,7 @@ img.add_border {
 <p><img alt="" height="485" src="./../images/ssh-9.PNG" width="839"/></p>
 <p>點Commit→Push<span>→Push</span></p>
 <p><span><img alt="" height="269" src="./../images/ssh-10.PNG" width="593"/></span></p>
-<h4>四、修改網頁標題</h4>
+<h4>五、修改網頁標題</h4>
 <p>打開資料夾找到init.py</p>
 <p><img alt="" height="661" src="./../images/init-1.PNG" width="778"/></p>
 <p><span>使用白窗打開</span></p>
