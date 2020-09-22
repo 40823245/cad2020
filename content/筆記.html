@@ -87,6 +87,7 @@ img.add_border {
 </head>
 <body>
 <div class='container'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -132,4 +133,108 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>Site Map</h1><div id="tipue_search_content"></div><ul><li><a href='About.html'>About</a><li><a href='Work.html'>Work</a><ul><li><a href='w1.html'>w1</a></li></ul><li><a href='筆記.html'>筆記</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">w1 << <a href='w1.html'>Previous</a> <br /><h1>筆記</h1>
+<h4>一、開啟9443</h4>
+<p><img alt="" height="274" src="./../images/9443.PNG" width="978"/></p>
+<p>先打指令到cmsimde資料夾</p>
+<p>在執行python wsgi.py指令</p>
+<p>網址搜尋https://localhost:9443/</p>
+<p>或複製黑窗最後一行的網址</p>
+<p><img alt="" height="274" src="./../images/9443-1.png" width="978"/></p>
+<p>案login登入→密碼admin</p>
+<h4>二、開啟8444</h4>
+<p>先到scad2資料夾找到http-server.py檔案</p>
+<p><img alt="" height="591" src="./../images/8444.PNG" width="680"/></p>
+<p>使用白窗開啟http-server.py</p>
+<p>點選Tools→go</p>
+<p><img alt="" height="445" src="./../images/8444-1.PNG" width="560"/></p>
+<h4>三、進行上傳</h4>
+<h5>方法一</h5>
+<p>先進到scad2  → cd tmp/scad2</p>
+<p>git add .</p>
+<p>git commit -m "此更新的主旨"</p>
+<p>git push</p>
+<p>輸入帳號(學號)</p>
+<p>輸入密碼</p>
+<h5>方法二(啟用ssh)</h5>
+<p>要先改.git裡面的config</p>
+<p>[remote "origin"]把之前的https加上#   打出第2行</p>
+<p><img alt="" height="444" src="./../images/ssh.PNG" width="562"/></p>
+<p>開啟putty(putty.exe)   將設定調好</p>
+<p>點github.com  案load</p>
+<p>設定proxy(使用自家網路、手機網路請選None)</p>
+<p>看你的網路連到哪一台 就打一樣的proxy</p>
+<p>打開SSH裡面的Auth</p>
+<p>選擇你所生產的金鑰檔案(.ppk)</p>
+<p>回到session點選save再open</p>
+<p><img alt="" height="420" src="./../images/ssh-1.PNG" width="667"/></p>
+<p>出現上圖就代表成功</p>
+<p>一樣先進到scad2  → cd tmp/scad2</p>
+<p>git add .</p>
+<p>git commit -m "此更新的主旨"</p>
+<p>git push</p>
+<p>(此方法不需打帳號密碼)</p>
+<h5>方法三(啟用ssh)</h5>
+<p>使用資料夾的GitExtensions</p>
+<p>點選GitExtensions.exe</p>
+<p>修改設定</p>
+<p><img alt="" height="777" src="./../images/ssh-2.PNG" width="958"/></p>
+<p><img alt="" height="779" src="./../images/ssh-3.PNG" width="960"/></p>
+<p>確認正確以後   點OK</p>
+<p>選擇Create new repository</p>
+<p><img alt="" height="607" src="./../images/ssh-4.PNG" width="925"/></p>
+<p>brown找到scad2資料夾後點Create</p>
+<p>點tools→Git GUI</p>
+<p><img alt="" height="485" src="./../images/ssh-5.PNG" width="841"/></p>
+<p><span>先點Stage Changed(=git add .)</span></p>
+<p><span></span></p><br />w1 << <a href='w1.html'>Previous</a> </div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
