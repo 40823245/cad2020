@@ -50,7 +50,11 @@
 <h4>下載並使用tcc、零件繪圖(小組、個人)</h4>
 <h3>tcc</h3>
 <h4>下載並修改路徑，所使用.c程式在白窗進行</h4>
-<p></p><h1>筆記</h1>
+<p>測試1:</p>
+<p><img alt="" height="700" src="/images/tcc-1.png" width="500"/></p>
+<p>測試2:</p>
+<p><img alt="" height="700" src="/images/tcc-3.png" width="500"/></p>
+<h1>筆記</h1>
 <h4>一、開啟9443</h4>
 <p><img alt="" height="276" src="/images/9443.PNG" width="978"/></p>
 <p>先打指令到cmsimde資料夾</p>
@@ -184,3 +188,12 @@ Host github.com
 <p><span>4、<span>Ctrl+4:放大鏡(Ctrl+4<span>能解除)</span></span></span></p>
 <p>5、畫畫模式:滑鼠直接畫任意線段、TAB+滑鼠滑動=畫圓、Shift+滑鼠滑動=畫直線</p>
 <p>Ctrl+<span>滑鼠滑動=畫矩形、Shift+Ctrl+滑鼠滑動=畫指線、Ctrl+T=打字</span></p>
+<h1>問題</h1>
+<p>在倉儲github網站中，會發現少了downloads的資料夾</p>
+<p><img alt="" height="350" src="/images/problem (1).png" width="179"/></p>
+<p>需要做以下修改，並能解決問題</p>
+<p>將scad2裡的.gitignore裡面的downloads/刪除，並save</p>
+<p><img alt="" height="806" src="/images/problem.png" width="1500"/></p>
+<p>重新push後github就能有downloads了</p>
+<p><img alt="" height="350" src="/images/problem (2).png" width="161"/></p>
+<p>原因:gitignore會幫你忽視以下的檔案，為了防止他人能clone到你的某些檔案</p>
