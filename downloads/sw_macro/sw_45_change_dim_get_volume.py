@@ -3,8 +3,8 @@ import win32com.client
 import win32api
 import os
  
-os.system("taskkill /IM sldworks.exe /F")
-os.system("taskkill /IM sldworks_fs.exe /F")
+os.system("taskkill /IM sldworks.exe /C")
+os.system("taskkill /IM sldworks_fs.exe /C")
  
 '''
 About DispatchEx and Dispatch Methods:
@@ -104,10 +104,10 @@ def part(app, fileName, sketchName, dimName, newDim, newFileName):
     return str(round(volumn[3]*1E9, 3)) + " mm*3"
 html = "以下零件採 SolidWorks 2017:<br /><br /><table border='1' cellpadding='5'><tr><th>Number</th><th>Part</th><th>Jpg</th><th>Width</th><th>Volume</th></tr>"
 index = 0
-for i in range(1, 3):
+for i in range(1, 11):
     dim = i*0.002
     blockVolume = part(app, "45_step.SLDPRT", "Sketch1", "Width", dim, "45_" + str(i))
-    print("45_" + str(i) + ".SLDPRT, dim= " + str(round(dim, 2)) +", volume= " + blockVolume)
+    print("45_" + str(i) + ".SLDPRT, dim= " + str(round(dim, 3)) +", volume= " + blockVolume)
     index += 1
     newFileName = "45_" + str(i)
     html += '''<tr>
@@ -131,6 +131,6 @@ for assembly
         swFeature = (Feature)swFeatureManager.FeatureLinearPattern2(3, 40 / 1000, 0, 0, false, true, "NULL", "NULL", false);
         assemblyModel.ClearSelection2(true);
 '''
-os.system("taskkill /IM sldworks.exe /F")
-os.system("taskkill /IM sldworks_fs.exe /F")
+os.system("taskkill /IM sldworks.exe /C")
+os.system("taskkill /IM sldworks_fs.exe /C")
 # now the SolidWorks is embedding
