@@ -105,15 +105,15 @@ def part(app, fileName, sketchName, dimName, newDim, newFileName):
 html = "以下零件採 SolidWorks 2017:<br /><br /><table border='1' cellpadding='5'><tr><th>Number</th><th>Part</th><th>Jpg</th><th>Width</th><th>Volume</th></tr>"
 index = 0
 for i in range(1, 11):
-    dim = i*0.002
+    dim = i*0.001
     blockVolume = part(app, "45_step.SLDPRT", "Sketch1", "Width", dim, "45_" + str(i))
     print("45_" + str(i) + ".SLDPRT, dim= " + str(round(dim, 3)) +", volume= " + blockVolume)
     index += 1
     newFileName = "45_" + str(i)
     html += '''<tr>
     <td>''' + str(index) +'''</td>
-    <td><a href="./../cad2020/downloads/sw_macro/html/''' + newFileName + '''.SLDPRT">''' + newFileName + '''.SLDPRT</a></td>
-    <td><img width="300" src="./../cad2020/downloads/sw_macro/html/''' + newFileName + '''.jpg"></img></td>
+    <td><a href="./../downloads/sw_macro/html/''' + newFileName + '''.SLDPRT">''' + newFileName + '''.SLDPRT</a></td>
+    <td><img width="300" src="./../downloads/sw_macro/html/''' + newFileName + '''.jpg"></img></td>
     <td>''' + str(round(dim*1000, 2)) + ''' mm </td>
     <td>''' + blockVolume + '''</td>
     </tr>
