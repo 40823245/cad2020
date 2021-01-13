@@ -530,7 +530,40 @@ os.system("taskkill /IM sldworks_fs.exe /F")
 </table><h2>w7</h2>
 <h4>下載並使用tcc、零件繪圖(小組、個人)、使用RoKiSim</h4>
 <h3>tcc</h3>
-<h4>下載並修改路徑，所使用.c程式在白窗進行</h4>
+<p>下載<a href="/downloads/tcc-0.9.27-win64-bin.zip">tcc資料夾</a>，並把tcc資料夾放在Y槽的跟目錄</p>
+<p><img alt="" height="300" src="/images/tcc-8.png" width="500"/></p>
+<h4>修改<span>start.bat裡的程式碼</span></h4>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">set path_portablegit=%Disk%:\Portablegit\bin;
+set path_julia=%Disk%:\julia-1.5.2\bin;
+set path_tcc=%Disk%:\tcc\;
+ 
+path=%Disk%:;%path_python%;%path_portablegit%;%path_julia%;%path_tcc%;%path%;</pre>
+<p><img alt="" height="300" src="/images/tcc-6.png" width="500"/></p>
+<p>重新啟動start.bat</p>
+<p>在黑窗輸入tcc，出現下圖代表成功</p>
+<p><img alt="" height="300" src="/images/tcc-7.png" width="500"/></p>
+<p>打開資料夾的<span>cpp.properties(移到白窗)</span></p>
+<p><img alt="" height="300" src="/images/tcc-9.png" width="500"/></p>
+<p>案view→Line Numbers</p>
+<p><img alt="" height="300" src="/images/tcc-10.png" width="500"/></p>
+<p>找到476行，並修改</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">ccopts=-pedantic -Os
+#cc=g++ $(ccopts) -c $(FileNameExt) -o $(FileName).o
+#ccc=gcc $(ccopts) -c $(FileNameExt) -o $(FileName).o
+cc=y:/tcc/tcc.exe -run
+ccc=y:/tcc/tcc.exe -run
+ 
+make.command=make
+command.compile.*.c=$(ccc) -std=c99
+command.build.*.c=$(make.command)
+command.build.*.h=$(make.command)
+command.clean.*.c=$(make.command) clean
+command.clean.*.h=$(make.command) clean
+command.go.*.c=$(cc) $(FileNameExt)
+#command.go.*.c=./$(FileName)
+# To make the Go command both compile (if needed) and execute, use this setting:</pre>
+<p><img alt="" height="300" src="/images/tcc-11.png" width="500"/></p>
+<p>到tcc<span>→</span>examples<span>→text→c_ex→hello.c(移到白窗)並執行</span></p>
 <p>測試1:</p>
 <p><img alt="" height="500" src="/images/tcc-1.png" width="300"/></p>
 <p>測試2:</p>
